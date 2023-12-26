@@ -1,11 +1,19 @@
 "use client"
 
+<<<<<<< HEAD
 import * as z from "zod"
 import axios from "axios"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { toast } from "react-hot-toast"
 import { Trash } from "lucide-react"
+=======
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
+import { Separator } from "@/components/ui/separator";
+
+>>>>>>> 7f42e2043222dcfcfdc40bee2b488c69757c01ef
 import { Store } from "@prisma/client"
 import { useParams, useRouter } from "next/navigation"
 import { useState } from "react"
@@ -37,6 +45,12 @@ type SettingsFormValues = z.infer<typeof formSchema>
 interface SettingsFormProps {
   initialData: Store;
 };
+
+const formSchema = z.object({
+    name: z.string().min(1),
+})
+
+type SettingsFormValue = z.infer<typeof formSchema>;
 
 export const SettingsForm: React.FC<SettingsFormProps> = ({
   initialData
