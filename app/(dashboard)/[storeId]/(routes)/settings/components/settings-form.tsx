@@ -46,9 +46,6 @@ interface SettingsFormProps {
   initialData: Store;
 };
 
-const formSchema = z.object({
-    name: z.string().min(1),
-})
 
 type SettingsFormValue = z.infer<typeof formSchema>;
 
